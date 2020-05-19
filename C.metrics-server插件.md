@@ -86,10 +86,10 @@ replicaset.apps/metrics-server-77df59848f   1         1         1       19s
 ## 查看 metrics-server 输出的 metrics
 
 ```
-kubectl get --raw https://172.27.138.251:6443/apis/metrics.k8s.io/v1beta1/nodes | jq .
-kubectl get --raw https://172.27.138.251:6443/apis/metrics.k8s.io/v1beta1/pods | jq .
-kubectl get --raw https://172.27.138.251:6443/apis/metrics.k8s.io/v1beta1/nodes/<node-name> | jq .
-kubectl get --raw https://172.27.138.251:6443/apis/metrics.k8s.io/v1beta1/namespace/<namespace-name>/pods/<pod-name> | jq .
+kubectl get --raw https://192.168.0.10:6443/apis/metrics.k8s.io/v1beta1/nodes | jq .
+kubectl get --raw https://192.168.0.10:6443/apis/metrics.k8s.io/v1beta1/pods | jq .
+kubectl get --raw https://192.168.0.10:6443/apis/metrics.k8s.io/v1beta1/nodes/<node-name> | jq .
+kubectl get --raw https://192.168.0.10:6443/apis/metrics.k8s.io/v1beta1/namespace/<namespace-name>/pods/<pod-name> | jq .
 ```
 + 替换 <xxx> 为实际内容；
 + /apis/metrics.k8s.io/v1beta1/nodes 和 /apis/metrics.k8s.io/v1beta1/pods 返回的 usage 包含 CPU 和 Memory；
@@ -100,9 +100,9 @@ kubectl top 命令从 metrics-server 获取集群节点基本的指标信息：
 
 ``` bash
 NAME              CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   
-zhangjun-k8s-01   177m         2%     9267Mi          58%       
-zhangjun-k8s-02   364m         4%     10338Mi         65%       
-zhangjun-k8s-03   185m         2%     5950Mi          37%   
+node0   177m         2%     9267Mi          58%       
+node1   364m         4%     10338Mi         65%       
+node2   185m         2%     5950Mi          37%   
 ```
 
 ## 参考

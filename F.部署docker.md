@@ -20,7 +20,7 @@ tags: worker, docker
 docker 运行和管理容器，kubelet 通过 Container Runtime Interface (CRI) 与它进行交互。
 
 注意：
-1. 如果没有特殊指明，本文档的所有操作**均在 zhangjun-k8s01 节点上执行**，然后远程分发文件和执行命令；
+1. 如果没有特殊指明，本文档的所有操作**均在 node0节点上执行**，然后远程分发文件和执行命令；
 2. 需要先安装 flannel，请参考附件 [E.部署flannel网络.md](E.部署flannel网络.md)；
 
 ## 安装依赖包
